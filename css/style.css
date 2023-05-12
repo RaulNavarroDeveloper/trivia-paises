@@ -1,0 +1,383 @@
+:root{
+    --color-primary: #3B999B; 
+    --color-secondary: #EE5873;
+    --text-third: #5778A3;
+    --text-color: #E3E4E6;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+a {text-decoration: none;
+    color: white;
+}
+
+/* NAVEGACION  */
+
+.nav-bar{
+    height: 60px;
+    background-color: #3B999B;
+}
+
+.router-link-exact-active{
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+/* MAIN */
+
+.card{
+    border-radius: 15px;
+    max-width: 240px;
+}
+
+.info-view {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.imgs-banderas{
+    width: 214px;
+    height: 142px;
+}
+/*  TRIVIA PRE-QUIZ */
+.btn-quiz{
+    background-color: var(--color-secondary);
+    color: var(--text-color);
+}
+
+.btn-quiz:hover{
+    background-color: white;
+    border-color: var(--color-secondary);
+    border-width: 5px;
+    color: black;
+    transition: 0.8s;
+}
+
+/* QUIZ */
+
+.container-app {
+    display: flex;
+    width: 100%;
+    height: 750px;
+    justify-content: center;
+}
+
+.container-quiz {
+    display: flex;
+    width: 40%;
+    height: 600px;
+    background-color: white;
+    text-align: center;
+    flex-flow: column;
+    border: 1px solid #e7eae0;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.quiz-cabecera{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid #e7eae0;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7eae0;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.quiz-main{
+    display: flex;
+    width: 100%;
+    height: 70%;
+    flex-flow: column;
+    margin: auto;
+}
+
+.quiz-footer {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    border-top: 1px solid #e7eae0;
+    background-color: #e7eae0;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.box-preguntas{
+    margin-top: 20px;
+}
+.box-preguntas p {
+    margin-top:20px ;
+}
+
+.box-respuestas{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.box-respuestas ul {
+    display: flex;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    flex-flow: column;
+
+}
+
+.box-respuestas ul li {
+    list-style: none;
+    line-height: 2;
+    border: 1px solid #cdd2d2;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.box-respuestas ul li:hover {
+    /*transform: scale(1.1);*/
+    /* background-color: #e7eae0; */
+    opacity: 0.8;
+}
+
+.box-botones{
+    display: flex;
+    width: 100%;
+}
+
+.box-botones button {
+    width: 150px;
+    height: 35px;
+    outline: none;
+    border: 0;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: auto;
+    background-color: #a09f9ff5;
+}
+
+.box-botones button:hover{
+    background-color: #727272f5;
+    transition: 0.5s;
+}
+
+.box-puntuacion{
+    display: flex;
+    width: 100%;
+    height: 70%;
+    flex-flow: column;
+}
+
+.box-puntuacion h2{
+    margin-top: 40px;
+}
+
+.btn-reiniciar{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.btn-reiniciar a{
+    width: 150px;
+    outline: none;
+    border: 0;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: auto;
+    background-color: rgb(106, 128, 202)
+}
+
+li.correcto{
+    /* rgb(74, 219, 74) */
+background-color: green;
+border: 1px solid green;
+color: white;
+font-weight: 600;
+}
+
+
+li.incorrecto{
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+    font-weight: 600;
+}
+
+.progreso{
+    display: flex;
+    width: 100%;
+    height: 5px;
+    transition: 0.5s;
+    background-color: #6a80ca;
+}
+
+/* LOADER DEL FETCH EN LAS TRIVIAS*/
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #000;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+  /* TABLA DE CLASIFICACION */
+  .table {
+    max-width:75%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.table thead {
+    text-align: center;
+    background-color: #38A86A;
+    color: #fff;
+}
+
+
+.table td,
+.table th {
+    text-align: center;
+    padding: .5rem;
+    border: 1px solid #666;
+}
+
+.table td {
+    vertical-align: top;
+}
+
+/* TABLA DE CLASIFICACION */
+.ir-trivia{
+    border-radius: 20px;
+    font-size: 20px;
+    background-color: #6a80ca;
+    color: white;
+}
+
+.ir-trivia:hover{
+background-color: #516094;
+color: white;
+transition: 0.7s;
+}
+
+/* FORM DE ENVIO DE DATOS */
+
+.boton-form{
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    color: white;
+    font-size: 18px;
+}
+
+.div-input input{
+    border-radius: 8px;
+}
+
+.boton-form:hover{
+    background-color: #b4394f;
+    color: white;
+    transition: 0.7s;
+}
+
+/* FOOTER */
+.footer{
+    background-color: var(--color-primary);
+}
+
+.lista-datos li{
+    color: white;
+   }
+
+.lista-footer li:hover{
+ color: var(--color-secondary)
+}
+/* MEDIA QUERIES */
+
+@media screen and (max-width:1100px){
+    .container-quiz{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:900px){
+    .container-quiz{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:720px){
+    .container-quiz{
+        width: 80%;
+    }
+
+    .box-botones button{
+        width: 100px;
+    }
+}
